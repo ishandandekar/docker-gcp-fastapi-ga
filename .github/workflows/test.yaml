@@ -20,6 +20,10 @@ jobs:
       - name: Checkout repository
         uses: 'actions/checkout@v4'
 
+      - name: Test image url
+        run:
+          echo '${{ env.DOCKER_IMAGE_URL }}'
+
       - name: Google Cloud Auth
         uses: 'google-github-actions/auth@v2'
         with:

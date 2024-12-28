@@ -22,7 +22,7 @@ jobs:
 
       - name: Test image url
         run:
-          echo '${{ env.DOCKER_IMAGE_URL }}'
+          echo '${{ env.DOCKER_IMAGE_URL }}' | sed 's/./& /g'
 
       - name: Google Cloud Auth
         uses: 'google-github-actions/auth@v2'

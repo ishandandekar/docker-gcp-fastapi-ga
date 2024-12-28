@@ -5,7 +5,7 @@ env:
   PROJECT_ID: '${{ secrets.PROJECT_ID }}'
   DOCKER_IMAGE_URL: '${{ secrets.IMAGE_URL }}'
 on:
-  workflow_run:
+  workflow_dispatch:
   push:
     branches:
       - main

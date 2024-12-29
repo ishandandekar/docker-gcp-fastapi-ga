@@ -28,7 +28,7 @@ jobs:
       
       - name: Install and run script
         run:
-          pip install -r requirements.txt
+          pip install -r requirements.txt &&
           python model_trainer.py
 
       - name: Google Cloud Auth

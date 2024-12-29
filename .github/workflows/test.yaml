@@ -21,9 +21,15 @@ jobs:
       - name: Checkout repository
         uses: 'actions/checkout@v4'
 
-      - name: Test image url
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Install and run script
         run:
-          echo '${{ env.DOCKER_IMAGE_URL }}' | sed 's/./& /g'
+          pip install -r requirements.txt
+          python model_trainer.py
 
       - name: Google Cloud Auth
         uses: 'google-github-actions/auth@v2'
